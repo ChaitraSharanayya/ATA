@@ -1,0 +1,663 @@
+
+2nd program
+
+<html>
+<head>
+<script>
+document.write('<h1 align="right">Squares and Cubes of the numbers from 0 to 10</h1>');
+document.write('<center><table width="30%" border="1" bgcolor="white">');
+document.write( "<tr> <th>Number</th> <th>Square</th> <th>Cube</th> </tr>" ) ;
+for(var n=0; n<=10; n++)
+{
+document.write( "<tr><td>" + n + "</td><td>" + n*n + "</td><td>" + n*n*n + "</td></tr>" );
+}
+document.write( "</table>" );
+</script>
+</head>
+</html>
+
+3rd program
+
+<!DOCTYPE html>
+<html>
+<body>
+<p id="myP1">TEXT-GROWING.</p>
+<p id="myP2">TEXT-SHRININKING</p>
+</body>
+<script>
+//Global declerations
+var size = 10;
+vari =0;
+var myWait1 = setInterval(GrowText1, 100);
+function GrowText1()
+{
+if(size<51)
+{
+size = size + 1;
+document.getElementById("myP1").style.fontSize = (size+'pt');
+document.getElementById("myP1").style.color = "red";
+//Hide the paragraph "text-shriniking"
+document.getElementById("myP2").style.visibility = "hidden";
+}
+else
+{
+clearInterval(myWait1);
+myWait1 = setInterval(ShrinkText1, 100);
+//Now hide the 1st paragraph and display the second paragraph
+document.getElementById("myP1").style.visibility = "hidden";
+document.getElementById("myP1").style.fontSize = '1pt';
+document.getElementById("myP2").style.visibility = "visible";
+}
+}
+function ShrinkText1()
+{
+
+Web Technology and its Applications 15CSL77
+
+Dept. of CSE, KSIT. Page 8
+if(size>5)
+{
+size = size - 1;
+document.getElementById("myP2").style.fontSize = (size+'pt');
+document.getElementById("myP2").style.color = "blue";
+}
+else
+{
+clearInterval(myWait1);
+}
+}
+</script>
+</html>
+
+
+
+4th A program
+
+<html>
+<head><title>3A PROGRAM</title>
+<SCRIPT>
+function vow(st)
+{
+var pos;
+pos=st.search(/[aeiouAEIOU]/);
+if(pos<0)
+alert("pattern not found\n");
+else
+alert("Position of the left most vowel is "+(pos+1));
+}
+</SCRIPT>
+</head>
+<body>
+<FORM><p>Enter the text</p>
+<input type="text" id="voweltext"/>
+<input type="button" value="Click here" onclick="vow(voweltext.value);"/>
+</FORM></body>
+</html>
+
+
+4th B
+
+<html>
+<title>Reverse Number</title>
+<script>
+function rev()
+{
+var n=prompt("Enter Number"," ");
+n=parseInt(n);
+var temp=0,rev=0;
+while(n>0)
+{
+temp=n%10;
+rev=rev*10+temp;
+n=n/10;
+n=parseInt(n);
+}
+document.write("The Reverse number is:",rev);
+}
+</script>
+<body>
+<form>
+<input type="button" value="Enter No" onclick="rev()";>
+</form>
+</body>
+</html>
+
+
+5th
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE student_information[
+<!ELEMENT student_information (ad+)>
+<!ELEMENT ad (usn,name,college,branch,year,email)>
+<!ELEMENT usn (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT college (#PCDATA)>
+<!ELEMENT branch (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+]>
+<?xml-stylesheet type="text/css" href="4a.css"?>
+<student_information>
+<h1>First Student Information</h1>
+<ad><label>USN:</label><usn>1JB11CS001</usn></ad>
+<ad><label>NAME:</label><name>ABC</name></ad>
+<ad><label>COLLEGE:</label><college>KSIT</college></ad>
+<ad><label>BRANCH:</label><branch>CSE</branch></ad>
+<ad><label>YEAR:</label><year>2001</year></ad>
+<ad><label>EMAIL:</label><email>abc@gmail.com</email></ad>
+<h1>Second Student Information</h1>
+<ad><label>USN:</label><usn>1JB11CS002</usn></ad>
+<ad><label>NAME:</label><name>DEF</name></ad>
+<ad><label>COLLEGE:</label><college>KSIT</college></ad>
+<ad><label>BRANCH:</label><branch>CSE</branch></ad>
+<ad><label>YEAR:</label><year>2001</year></ad>
+<ad><label>EMAIL:</label><email>def@gmail.com</email></ad>
+<h1>Third Student Information</h1>
+<ad><label>USN:</label><usn>1JB11CS003</usn></ad>
+<ad><label>NAME:</label><name>GHI</name></ad>
+<ad><label>COLLEGE:</label><college>KSIT</college></ad>
+<ad><label>BRANCH:</label><branch>CSE</branch></ad>
+<ad><label>YEAR:</label><year>2001</year></ad>
+<ad><label>EMAIL:</label><email>ghi@gmail.com</email></ad>
+</student_information>
+CSS Document for the above XML Document
+ad{display:block;}
+label{font-weight:bold;color:blue;}
+usn{font-size:14pt;color:red;}
+name{font-size:14pt;color:red;}
+college{font-size:14pt;color:red;}
+branch{font-size:14pt;color:red;}
+
+Web Technology and its Applications 15CSL77
+
+Dept. of CSE, KSIT. Page 13
+year{font-size:14pt;color:red;}
+email{font-size:14pt;color:red;}
+
+
+6th
+
+<?php
+$file = 'count.txt';
+$count = strval(file_get_contents($file));
+file_put_contents($file, $count + 1);
+echo("You are visitor number:".$count);
+?>
+
+7th
+
+<html><head>
+<script type="text/javascript">
+function startTime()
+{
+var d= new Date();
+var h= d.getHours();
+var m= d.getMinutes();
+var s= d.getSeconds();
+document.getElementById("txt").innerHTML= h+" : "+m+" : "+s;
+setTimeout('startTime()', 1000);
+}
+</script>
+<style type="text/css">
+h1
+{
+font-size: 70px;
+}
+</style></head>
+<body bgcolor = "#349" text="white" onload="startTime()">
+<br>
+<h1 align= "center"> The time from the local system is:
+<span id= "txt"></span>
+</h1>
+</body>
+</html>
+</br>
+</br></br></br>
+//To display the time or server
+<?php
+$today = date("H:i:s"); // 17:16:18
+?>
+<!DOCTYPE html>
+<html>
+<body>
+<h1>
+
+Web Technology and its Applications 15CSL77
+
+Dept. of CSE, KSIT. Page 16
+<?php echo "The time from the server is " . date("h:i:sa");?>
+</h1>
+</body>
+</html>
+
+8th  A
+
+<?php
+if(isset($_POST['sub']))
+{
+$txt1=$_POST['n1'];
+$txt2=$_POST['n2'];
+$oprnd=$_POST['sub'];
+if($oprnd=="+")
+$res=$txt1+$txt2;
+else if($oprnd=="-")
+$res=$txt1-$txt2;
+else if($oprnd=="x")
+$res=$txt1*$txt2;
+else if($oprnd=="/")
+$res=$txt1/$txt2;
+
+}
+?>
+<html>
+<form method="post" action="">
+Calculator
+</br>
+No1:<input name="n1" value="<?php echo $txt1; ?>" >
+</br>
+No2:<input name="n2" value="<?php echo $txt2; ?>">
+</br>
+Res:<input name="res" value="<?php echo $res; ?>">
+</br>
+<input type="submit" name="sub" value="+">
+<input type="submit" name="sub" value="-">
+<input type="submit" name="sub" value="x">
+<input type="submit" name="sub" value="/">
+</form>
+</html>
+
+8th B
+
+<?php
+header('Content-Type: text/plain'); //without this header "\t and \n" won’t work
+// transpose matrix
+$matrix1 = array(
+array(1, 2),
+array(4, 5),
+//array(7, 8)
+);
+$matrix2 = array(
+array(1, 2),
+array(4, 5),
+//array(7, 8)
+);
+echo "\n\n\n";
+echo “The order of the matrix A is:".count($matrix1)."x".count($matrix1[0]));
+echo "\n";
+echo “The order of the matrix B is:".count($matrix1)."x".count($matrix2[0]));
+echo "\n";
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$rowCount= count($matrix1); //Provides the rowcount of matrix
+$colCount = count($matrix1[0]); //Provides the column count of matrix
+echo "The input matrix A is:\n";
+for($r = 0; $r < $rowCount; $r++)
+{ for($c=0; $c < $colCount; $c++)
+{
+echo $matrix1[$r][$c]." \t";
+}
+echo "\n";
+}
+echo "The input matrix B is:\n";
+for($r = 0; $r < $rowCount; $r++)
+{ for($c=0; $c < $colCount; $c++)
+{
+echo $matrix1[$r][$c]." \t";
+}
+echo "\n";
+}
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+//The transpose of the matrix
+echo "\nThe output Transpose of matrix is:\n";
+
+Web Technology and its Applications 15CSL77
+
+Dept. of CSE, KSIT. Page 19
+for($r=0; $c < $colCount; $r++)
+{
+for($c=0; $c < $rowCount; $c++)
+{
+echo $matrix1[$c][$r]." \t";
+}
+echo "\n";
+}
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$rowCount= count($matrix1); //Provides the rowcount of matrix
+$colCount = count($matrix1[0]); //Provides the column count of matrix
+$rowCount2 = count($matrix2);
+$colCount2 = count($matrix2[0]);
+//The sum of the matrix
+echo "\nThe sum of matrix is:\n";
+for($r = 0; $r < $rowCount; $r++)
+{ for($c=0; $c < $colCount; $c++)
+{
+$val= $matrix1[$r][$c] + $matrix2[$r][$c];
+echo $val."\t";
+}
+echo "\n";
+}
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$rowCount= count($matrix1); //Provides the row count of matrix
+$colCount = count($matrix1[0]); //Provides the column count of matrix
+$rowCount2 = count($matrix2);
+$colCount2 = count($matrix2[0]);
+//The Multiplication of the matrix
+echo "\nThe Multiplication of matrix is:\n";
+//A*B C*D
+//B is not equal to C
+if($colCount == $rowCount2)
+{
+for($r = 0; $r < $rowCount; $r++)
+{ for($c=0; $c < $colCount; $c++)
+{
+$val= $matrix1[$r][$c] * $matrix2[$r][$c];
+echo $val."\t";
+}
+echo "\n";
+}
+
+Web Technology and its Applications 15CSL77
+
+Dept. of CSE, KSIT. Page 20
+}
+else
+{
+echo "The matrix multiplication is not possible.";
+}
+?>
+
+
+9th
+
+<?php
+header('Content-Type: text/plain');
+$allTheStates = "Mississippi Alabama Texas Massachusetts Kansas tuxas";
+$statesArray = [];
+$states1 = explode(' ',$allTheStates);
+
+$i = 0;
+//states that ends in xas
+foreach($states1 as $state) {
+if(preg_match( '/xas$/', ($state)))
+{ $statesArray[$i] = ($state);
+$i = $i + 1;
+print "\nThe States that ends in xas:" . $state;
+}
+}
+//states that begins with k and ends in s
+foreach($states1 as $state)
+{
+if(preg_match('/^k.*s$/i', ($state)))
+{ $statesArray[$i] = ($state);
+$i = $i + 1;
+echo "\nThe states that begins with k ans ends in s:" . $state;
+}
+}
+//states that begins with M and ends in s
+foreach($states1 as $state) {
+if(preg_match('/^M.*s$/', ($state)))
+{ $statesArray[$i] = ($state);
+$i = $i + 1;
+echo "\nThe states that begins with M and ends in s:" . $state;
+}
+}
+//states that ends in a
+foreach($states1 as $state) {
+
+Web Technology and its Applications 15CSL77
+
+Dept. of CSE, KSIT. Page 22
+
+if(preg_match('/a$/', ($state)))
+{ $statesArray[$i] = ($state);
+$i = $i + 1;
+echo "\nThe states that ends in a:" . $state;
+}
+}
+//}
+foreach( $statesArray as $element => $value ){
+print( "\n" . $value." is the element ". $element);
+}
+?>
+
+10th
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Selection Sort</title>
+</head>
+<!-- jQuery 3 -->
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+var globalData=null;
+var tempData;
+if(tempData===null||tempData===undefined){
+tempData={};
+}
+tempData={
+saveRecord:function(){
+var url="ajaxInfo.php";
+var formEQData = new FormData($('#formRecord')[0]);
+formEQData.append("saveRecord","saveRecord");
+$.ajax({
+type:"POST",
+url:url,
+async: false,
+dataType: 'json',
+cache : false,
+processData: false,
+contentType: false,
+data:formEQData,
+success: function(obj) {
+alert(obj.msg);
+tempData.getRecord(); // Calling function to fetch the Record from DB.
+}
+});
+},
+getRecord:function(){
+var url="ajaxInfo.php";
+var myData = {getRecord:'getRecord'};
+$.ajax({
+type:"POST",
+
+Web Technology and its Applications 15CSL77
+
+Dept. of CSE, KSIT. Page 24
+url:url,
+async: false,
+dataType: 'json',
+data:myData,
+success: function(obj) {
+globalData=obj.studentArr; // Assigning to Global Variable
+var content="";
+$('#tableRow').html("");
+for(var i = 0; i<obj.studentArr.length; i++) {
+content+='<tr><td>'+obj.studentArr[i].stu_id+'</td><td>'+obj.studentArr[i].stu_name+'</td>'
++'<td>'+obj.studentArr[i].stu_mobile+'</td><td>'+obj.studentArr[i].stu_email+'</td></tr>';
+}
+$('#tableRow').append(content);
+}
+});
+},
+selectionSort:function(){
+var url="ajaxInfo.php";
+var myData = {selectionSort:'selectionSort'};
+$.ajax({
+type:"POST",
+url:url,
+async: false,
+dataType: 'json',
+data:myData,
+success: function(obj) {
+var content="";
+$('#tableRow').html("");
+for(var i = 0; i<obj.sortedArr.length; i++) {
+for(var j = 0; j<globalData.length; j++) {
+if(obj.sortedArr[i]==globalData[j].stu_id){
+content+='<tr><td>'+globalData[j].stu_id+'</td><td>'+globalData[j].stu_name+'</td>'
++'<td>'+globalData[j].stu_mobile+'</td><td>'+globalData[j].stu_email+'</td></tr>';
+}
+}
+}
+$('#tableRow').append(content);
+
+}
+});
+},
+
+Web Technology and its Applications 15CSL77
+
+Dept. of CSE, KSIT. Page 25
+};
+$(document).ready(function() {
+tempData.getRecord();
+});
+</script>
+<body>
+<center>
+<h1> Add Student Record </h1>
+<form id="formRecord">
+<table border="0">
+<tr>
+<td>Name</td>
+<td><input type="text" name="name" id="name"></td>
+</tr>
+<tr>
+<td>Mobile Number</td>
+<td><input type="number" name="mobile" id="mobile"></td>
+</tr>
+<tr>
+<td>Email ID</td>
+<td><input type="email" name="email" id="email"></td>
+</tr>
+</table><br>
+<button type="button" onclick="tempData.saveRecord();"
+style="width:150px;">Add Student</button>
+</form>
+<br/><br/>
+<div style="overflow-x: scroll;height: 600px;width:60%;">
+<button type="button" style="width:150px;float: right;" onclick="tempData.selectionSort();"
+>
+Selection Sort</button>
+<br/><br/>
+<table border=1 style="width:100%;">
+<thead>
+<tr style="text-align: left;">
+<th>Student ID</th>
+<th>Name</th>
+<th>Mobile</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody id="tableRow">
+
+Web Technology and its Applications 15CSL77
+
+Dept. of CSE, KSIT. Page 26
+</tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+<?php
+require_once('db.php');
+
+/* Fetching the initial data */
+/*$Query = 'select * from info';
+$fetchRec = mysqli_query($con,$Query) or die(mysqli_error());*/
+
+/* Add the record to DATABASE */
+if(isset($_POST['saveRecord']))
+{
+$name = $_POST['name'];
+$mobile = $_POST['mobile'];
+$email = $_POST['email'];
+if($name !='' && $mobile !='' && $email !='')
+{
+$stu_id = rand(0,99999); //random number generation
+$Query ="insert into info(stu_id,stu_name,stu_mobile,stu_email)
+values($stu_id,'$name',$mobile,'$email')";
+mysqli_query($con,$Query) or die(mysqli_error());
+$msg = 'Record Saved Successfully !';
+}
+else{
+$msg = "Text Field is empty !";
+}
+$status['msg'] = $msg;
+echo json_encode($status);
+mysqli_close($con);
+}
+/* read all studrnt data from DATABASE */
+if(isset($_POST['getRecord']))
+{
+$sql = "select * from info";
+$fetchRec = mysqli_query($con,$sql) or die(mysqli_error());
+while ($row=mysqli_fetch_array($fetchRec))
+{
+$stu_id = $row['stu_id'];
+
+Web Technology and its Applications 15CSL77
+
+Dept. of CSE, KSIT. Page 27
+$stu_name = $row['stu_name'];
+$stu_mobile = $row['stu_mobile'];
+$stu_email = $row['stu_email'];
+$studentArr[]=array('stu_id' =>$stu_id,
+'stu_name' =>$stu_name,
+'stu_mobile' =>$stu_mobile,
+'stu_email' =>$stu_email
+);
+}
+$status['studentArr'] = $studentArr;
+echo json_encode($status);
+mysqli_close($con);
+}
+/* read data from DATABASE */
+if(isset($_POST['selectionSort']))
+{
+$sql = "select * from info";
+$fetchRec = mysqli_query($con,$sql) or die(mysqli_error());
+while ($row=mysqli_fetch_array($fetchRec)) {
+$getStuID[]= $row['stu_id'];
+}
+$selectionArr = selection_sort($getStuID); // calling selection Sort function
+$status['sortedArr'] = $selectionArr;
+echo json_encode($status);
+mysqli_close($con);
+}
+function selection_sort($data)
+{
+for($i=0; $i<count($data)-1; $i++) {
+$min = $i;
+for($j=$i+1; $j<count($data); $j++) {
+if ($data[$j]<$data[$min]) {
+$min = $j;
+}
+}
+$data = swap_positions($data, $i, $min);
+}
+return $data;
+}
+function swap_positions($data1, $left, $right) {
+$backup_old_data_right_value = $data1[$right];
+$data1[$right] = $data1[$left];
+
+Web Technology and its Applications 15CSL77
+
+Dept. of CSE, KSIT. Page 28
+$data1[$left] = $backup_old_data_right_value;
+return $data1;
+}
+?>
+<?php
+error_reporting(0);
+session_start();
+$con = mysqli_connect("localhost","root","","student_db");
+if (mysqli_connect_errno()) {
+echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+?>
+
+
